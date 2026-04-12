@@ -1,6 +1,7 @@
 import { format } from "date-fns";
 
 import { OrdersChart } from "@/components/orders-chart";
+import { TelegramTestPanel } from "@/components/telegram-test-panel";
 import { getDashboardData } from "@/lib/dashboard";
 import { formatCompactNumber, formatCurrency } from "@/lib/utils";
 
@@ -34,6 +35,7 @@ export default async function HomePage() {
             <span className="label">Состояние окружения</span>
             <strong>{dashboard.syncState.hasCredentials ? "Готово к sync" : "Нужны ключи"}</strong>
           </div>
+          <TelegramTestPanel />
         </div>
       </section>
 

@@ -9,9 +9,11 @@
 - Скрипт `import:retailcrm` для загрузки `mock_orders.json` в RetailCRM.
 - Скрипт `sync:orders` для выгрузки заказов из RetailCRM и upsert в Supabase.
 - Telegram-алерты для high-value заказов с защитой от дублей через `telegram_alert_sent_at`.
+- Тестовая отправка Telegram-уведомления через UI дашборда и `POST /api/telegram/test`.
 - API routes:
   - `GET /api/health`
   - `POST /api/sync`
+  - `POST /api/telegram/test`
 - `vercel.json` с cron-конфигом для автоматического sync на Vercel.
 
 ## Результат
@@ -130,6 +132,18 @@ npm start
 - либо задай `SYNC_API_SECRET` и вызывай endpoint вручную с `Authorization: Bearer <secret>`.
 
 `POST /api/sync` запускает ту же логику, что и `npm run sync:orders`.
+
+### Тест Telegram без нового заказа
+
+На дашборде есть блок `Отправить тестовое уведомление`.
+
+Для проверки:
+
+1. Открой production или локальный dashboard.
+2. Введи `SYNC_API_SECRET` или `CRON_SECRET` в поле `Sync secret`.
+3. Нажми `Send test alert`.
+
+После этого приложение вызовет `POST /api/telegram/test` и отправит в тот же Telegram-чат тестовое сообщение.
 
 ## Telegram alert format
 
