@@ -17,7 +17,7 @@
 ## Результат
 
 - Production dashboard: [https://gbc-analytics-dashboard-eight.vercel.app](https://gbc-analytics-dashboard-eight.vercel.app)
-- GitHub repository: [https://github.com/ruslangbc-code/gbc-analytics-dashboard](https://github.com/ruslangbc-code/gbc-analytics-dashboard)
+- GitHub repository: [https://github.com/Detlaff00/gbc-analytics-dashboard](https://github.com/Detlaff00/gbc-analytics-dashboard)
 - Telegram alerting проверен на реальных заказах после импорта в RetailCRM
 - В Supabase оставлены только реальные записи после импорта и sync: `50` заказов, `24` Telegram-алерта без дублей
 
