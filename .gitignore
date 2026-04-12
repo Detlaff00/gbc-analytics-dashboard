@@ -1,9 +1,16 @@
 node_modules/
 .env
 .env.local
+.next/
+out/
+coverage/
+dist/
 __pycache__/
 *.pyc
 .venv/
 venv/
 .DS_Store
 .vercel/
+.vercel
+.npm-cache/
+.local/
