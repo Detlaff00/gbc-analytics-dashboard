@@ -19,6 +19,7 @@
 - Production dashboard: [https://gbc-analytics-dashboard-eight.vercel.app](https://gbc-analytics-dashboard-eight.vercel.app)
 - GitHub repository: [https://github.com/ruslangbc-code/gbc-analytics-dashboard](https://github.com/ruslangbc-code/gbc-analytics-dashboard)
 - Telegram alerting проверен на реальных заказах после импорта в RetailCRM
+- В Supabase оставлены только реальные записи после импорта и sync: `50` заказов, `24` Telegram-алерта без дублей
 
 ## Архитектура
 
@@ -147,6 +148,13 @@ npm test
 npm run lint
 npm run build
 ```
+
+Дополнительно были проверены интеграции:
+
+- `npm run import:retailcrm` успешно загрузил `50` заказов в RetailCRM;
+- `npm run sync:orders` успешно синхронизировал `50` заказов в Supabase;
+- Telegram alerting отработал для `24` заказов дороже `50 000 ₸`;
+- повторный sync не отправляет дубли благодаря `telegram_alert_sent_at`.
 
 ## Ограничения
 
