@@ -7,7 +7,6 @@ const requiredKeys = [
   "NEXT_PUBLIC_SUPABASE_ANON_KEY",
   "TELEGRAM_BOT_TOKEN",
   "TELEGRAM_CHAT_ID",
-  "TELEGRAM_TEST_SECRET",
   "SYNC_API_SECRET",
   "CRON_SECRET",
 ] as const;
