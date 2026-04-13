@@ -4,13 +4,15 @@ import { getOptionalEnv } from "@/lib/env";
 import { canUseTelegram, sendTelegramMessage } from "@/lib/telegram";
 
 export async function POST(request: NextRequest) {
-  const secret = getOptionalEnv("SYNC_API_SECRET") ?? getOptionalEnv("CRON_SECRET");
+  const secret = getOptionalEnv("TELEGRAM_TEST_SECRET");
 
-  if (secret) {
-    const authHeader = request.headers.get("authorization");
-    if (authHeader !== `Bearer ${secret}`) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
+  if (!secret) {
+    return NextResponse.json({ error: "Telegram test secret is not configured" }, { status: 503 });
+  }
+
+  const authHeader = request.headers.get("authorization");
+  if (authHeader !== `Bearer ${secret}`) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   if (!canUseTelegram()) {

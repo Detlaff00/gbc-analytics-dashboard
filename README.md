@@ -69,6 +69,7 @@ cp .env.example .env.local
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - `TELEGRAM_BOT_TOKEN`
 - `TELEGRAM_CHAT_ID`
+- `TELEGRAM_TEST_SECRET`
 - `SYNC_API_SECRET` или `CRON_SECRET`
 
 ### 3. Применение миграции Supabase
@@ -140,7 +141,7 @@ npm start
 Для проверки:
 
 1. Открой production или локальный dashboard.
-2. Введи `SYNC_API_SECRET` или `CRON_SECRET` в поле `Sync secret`.
+2. Введи `TELEGRAM_TEST_SECRET` в поле `Telegram test secret`.
 3. Нажми `Send test alert`.
 
 После этого приложение вызовет `POST /api/telegram/test` и отправит в тот же Telegram-чат тестовое сообщение.

@@ -12,7 +12,7 @@ export function TelegramTestPanel() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<StatusState>({
     type: "idle",
-    message: "Введи sync secret и отправь тестовое сообщение в Telegram.",
+    message: "Введи отдельный Telegram test secret и отправь тестовое сообщение.",
   });
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -54,12 +54,12 @@ export function TelegramTestPanel() {
       </div>
 
       <label className="telegram-secret-field">
-        <span>Sync secret</span>
+        <span>Telegram test secret</span>
         <input
           type="password"
           value={secret}
           onChange={(event) => setSecret(event.target.value)}
-          placeholder="Bearer secret"
+          placeholder="Telegram test secret"
           autoComplete="off"
           required
         />
